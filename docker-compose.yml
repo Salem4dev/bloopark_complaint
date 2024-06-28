@@ -1,0 +1,36 @@
+services:
+  web:
+    container_name: odoo16-stack
+    image: odoo:16.0
+    ports:
+      - "8016:8069"
+    depends_on:
+      - db
+    environment:
+      PYTHONUNBUFFERED: 1
+    tty: true
+    command: -u bloopark_realestatex_complaints --dev=xml -d bloo
+    # command: -d bloo --test-enable -i bloopark_realestatex_complaints
+    volumes:
+      - ./standard-addons:/var/lib/odoo
+      - ./config/odoo.config:/etc/odoo/odoo.conf
+      - ./addons/bloopark_task:/mnt/extra-addons
+    restart: always
+  db:
+    container_name: postgres16-stack
+    image: postgres:16
+    ports:
+      - "5439:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - PG_USER=odoo
+      - PG_PASSWORD=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - "odoo-dbs:/var/lib/postgresql/data/pgdata"
+    restart: always
+volumes:
+  odoo:
+  odoo-dbs:
