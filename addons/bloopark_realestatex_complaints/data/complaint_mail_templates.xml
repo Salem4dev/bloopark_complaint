@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <!-- Email Template -->
+        <record id="mail_template_complaint_submitted" model="mail.template">
+            <field name="name">Complaint Submitted</field>
+            <field name="model_id" ref="bloopark_realestatex_complaints.model_realestatex_complaint"/>
+            <field name="subject">Your Complaint {{ object.name }} has been Submitted</field>
+            <field name="email_from">{{ ctx.get('email_from') }}</field> <!-- Use email_from from context -->
+            <field name="email_to"> {{ ctx.get('email_to') }}</field> <!-- Use email_to from context -->
+            <field name="body_html" type="html">
+                <div style="font-family: Arial, sans-serif; font-size: 12pt;">
+                    <p>Dear <t t-out="object.title"/>,</p>
+                    <p>Thank you for submitting your complaint. Your complaint ID is <t t-out="object.name"/>. We will review it and get back to you shortly.</p>
+                    <p>Sincerely,</p>
+                    <p t-out="object.company_id.name"/>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>        
+        <record id="mail_template_complaint_solved" model="mail.template">
+            <field name="name">Complaint Solved</field>
+            <field name="model_id" ref="bloopark_realestatex_complaints.model_realestatex_complaint"/>
+            <field name="subject">Your Complaint {{ object.name }} has been Solved</field>
+            <field name="email_from">{{ ctx.get('email_from') }}</field> <!-- Use email_from from context -->
+            <field name="email_to"> {{ ctx.get('email_to') }}</field> <!-- Use email_to from context -->
+            <field name="body_html" type="html">
+                <div style="font-family: Arial, sans-serif; font-size: 12pt;">
+                    <p>Dear <t t-out="object.title"/>,</p>
+                    <p>Your complaint ID (<t t-out="object.name"/>) has been solved.</p>
+                    <p>Sincerely,</p>
+                    <p t-out="object.company_id.name"/>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>        
+        <record id="mail_template_complaint_dropped" model="mail.template">
+            <field name="name">Complaint Dropped</field>
+            <field name="model_id" ref="bloopark_realestatex_complaints.model_realestatex_complaint"/>
+            <field name="subject">Your Complaint {{ object.name }} has been Dropped</field>
+            <field name="email_from">{{ ctx.get('email_from') }}</field> <!-- Use email_from from context -->
+            <field name="email_to"> {{ ctx.get('email_to') }}</field> <!-- Use email_to from context -->
+            <field name="body_html" type="html">
+                <div style="font-family: Arial, sans-serif; font-size: 12pt;">
+                    <p>Dear <t t-out="object.title"/>,</p>
+                    <!-- <p t-out="ctx.get('email_body')"/> -->
+                    <p>Your complaint ID (<t t-out="object.name"/>) has been dropped.</p>
+                    <p>Sincerely,</p>
+                    <p t-out="object.company_id.name"/>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>        
+    </data>
+</odoo>

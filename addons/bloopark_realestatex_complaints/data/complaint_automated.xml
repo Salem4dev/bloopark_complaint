@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="action_assign_user_to_complaint" model="ir.actions.server">
+            <field name="name">Assign User to Complaint</field>
+            <field name="model_id" ref="model_realestatex_complaint"/>
+            <field name="binding_model_id" ref="model_realestatex_complaint"/>
+            <field name="state">code</field>
+            <field name="code">
+                if not record.user_id:
+                    user_id = env['realestatex.complaint']._get_next_user()
+                    record.sudo().write({'user_id': user_id})
+            </field>
+        </record>
+        <!-- Automated Action to Trigger User Assignment -->
+        <record id="automated_action_assign_user_to_complaint" model="base.automation">
+            <field name="name">Auto Assign User to Complaint</field>
+            <field name="model_id" ref="model_realestatex_complaint"/>
+            <field name="trigger">on_time</field>
+            <field name="trg_date_id" ref="field_realestatex_complaint__create_date"/>
+            <field name="trg_date_range">2</field>
+            <field name="trg_date_range_type">minutes</field>
+            <field name="action_server_id" ref="action_assign_user_to_complaint"/>
+        </record>
+    </data>
+</odoo>

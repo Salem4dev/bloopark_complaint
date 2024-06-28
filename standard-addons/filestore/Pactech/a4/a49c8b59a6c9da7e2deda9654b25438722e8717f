@@ -1,0 +1,40 @@
+
+                .o_company_1_layout {
+                font-family: Lato;
+                &.o_clean_footer {
+                    border-top: 3px solid #9ca6af;
+                    h4 {
+                        color: #9ca6af;
+                    }
+                    .pagenumber {
+                        border: 3px solid #2372af;
+                        background-color: #9ca6af;
+                    }
+                }
+                &.o_report_layout_bold {
+                    h1, h2, h3 {
+                        color: #2372af;
+                    }
+                    strong {
+                        color: #9ca6af;
+                    }
+                    table {
+                       thead {
+                           color: #9ca6af;
+                           tr th {
+                                border-top: 3px solid #9ca6af !important;
+                            }
+                        }
+                        tbody {
+                            tr:last-child td {
+                                border-bottom: 3px solid #9ca6af;
+                            }
+                        }
+                    }
+                    #total {
+                        strong {
+                            color: #9ca6af;
+                        }
+                    }
+                }
+            }

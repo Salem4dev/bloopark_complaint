@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <!-- Website Menu Item -->
+        <record id="website_menu_complaint_form" model="website.menu">
+            <field name="name">Complaint</field>
+            <field name="url">/complaint</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">10</field>
+        </record>
+
+        <!-- Website Page -->
+        <record id="complaint_form_page" model="website.page">
+            <field name="url">/complaint</field>
+            <field name="view_id" ref="complaint_land_page_form"/>
+            <field name="key">bloopark_realestatex_complaints.complaint_land_page_form</field>
+            <field name="is_published">True</field>
+            <field name="track" eval="True"/>
+        </record>
+            
+        <record id="complaint_success_page" model="website.page">
+            <field name="url">/complaint_success</field>
+            <field name="view_id" ref="complaint_success"/>
+            <field name="key">bloopark_realestatex_complaints.complaint_success</field>
+            <field name="is_published">True</field>
+            <field name="track" eval="True"/>
+        </record>
+
+    </data>
+</odoo>
