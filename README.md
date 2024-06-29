@@ -63,7 +63,7 @@ after create compalint from website and submit it will redirect to success page 
 ## Advanced Features
 
 ### Stages Management
-- Go to `Configuration > Complaints > Stages` to manage different stages of complaints.
+- Go to `Complaints > Stages` to manage different stages of complaints.
 - Add or edit stages to fit your business process.
 
 ### Reporting
