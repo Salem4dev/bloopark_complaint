@@ -10,7 +10,7 @@ services:
       PYTHONUNBUFFERED: 1
     tty: true
     # command: -u bloopark_realestatex_complaints --dev=xml -d bloopark
-    # command: -d bloo --test-enable -i bloopark_realestatex_complaints
+    # command: -d bloopark --test-enable -i bloopark_realestatex_complaints
     volumes:
       - ./standard-addons:/var/lib/odoo
       - ./config/odoo.config:/etc/odoo/odoo.conf
