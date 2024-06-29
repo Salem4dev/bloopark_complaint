@@ -3,18 +3,18 @@ services:
     container_name: odoo16-stack
     image: odoo:16.0
     ports:
-      - "8016:8069"
+      - "8069:8069"
     depends_on:
       - db
     environment:
       PYTHONUNBUFFERED: 1
     tty: true
-    command: -u bloopark_realestatex_complaints --dev=xml -d bloo
+    # command: -u bloopark_realestatex_complaints --dev=xml -d bloopark
     # command: -d bloo --test-enable -i bloopark_realestatex_complaints
     volumes:
       - ./standard-addons:/var/lib/odoo
       - ./config/odoo.config:/etc/odoo/odoo.conf
-      - ./addons/bloopark_task:/mnt/extra-addons
+      - ./addons:/mnt/extra-addons
     restart: always
   db:
     container_name: postgres16-stack

@@ -118,5 +118,6 @@
         <field name="context">{'group_by': 'stage_id'}</field>
     </record>
 
-    <menuitem id="menu_complaints" name="Complaints" parent="base.menu_custom" action="action_complaint"/>
+    <menuitem id="menu_complaints_root" name="Complaints"/>
+    <menuitem id="menu_complaints" name="Complaints" parent="menu_complaints_root" action="action_complaint"/>
 </odoo>

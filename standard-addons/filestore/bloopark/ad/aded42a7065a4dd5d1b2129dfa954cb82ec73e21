@@ -1,0 +1,32 @@
+
+                .o_company_1_layout {
+                font-family: Lato;
+                    &.din_page {
+                        &.header {
+                            .company_header {
+                                .name_container {
+                                    color: black;
+                                }
+                            }
+                        }
+                        &.invoice_note {
+                            td {
+                                .address {
+                                    > span {
+                                        color: black;
+                                    }
+                                }
+                            }
+                            h2 {
+                                color: black;
+                            }
+                            .page {
+                                [name=invoice_line_table], [name=stock_move_table], .o_main_table {
+                                    th {
+                                        color: black;
+                                    }
+                                }
+                            }
+                        }
+                    }
+            }

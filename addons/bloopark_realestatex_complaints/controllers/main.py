@@ -81,5 +81,5 @@ class ComplaintController(http.Controller):
         )
         return request.env["ir.ui.view"]._render_template(
             "bloopark_realestatex_complaints.complaint_success",
-            {"complaint_id": complaint.id},
+            {"complaint_id": complaint.name},
         )

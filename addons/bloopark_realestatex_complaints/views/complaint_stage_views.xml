@@ -42,5 +42,5 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_complaints_stages" name="Complaint Stages" parent="base.menu_custom" action="action_complaint_stages"/>
+    <menuitem id="menu_complaints_stages" name="Complaint Stages" parent="menu_complaints_root" action="action_complaint_stages"/>
 </odoo>
