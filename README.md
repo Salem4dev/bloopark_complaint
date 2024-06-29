@@ -78,5 +78,5 @@ after create compalint from website and submit it will redirect to success page 
 - To run the tests, use the following command in your Odoo installation directory:
 
   use below command in docker-compose file 
-  command: -d bloopark --test-enable -i bloopark_realestatex_complaints
-  Then run: docker-compose up
+  `command: -d bloopark --test-enable -i bloopark_realestatex_complaints`
+  Then run: `docker-compose up`
