@@ -21,7 +21,6 @@
         "views/complaint_website_templates.xml",
         "report/complaint_work_order_report.xml",
     ],
-    "test": ["tests/test_complaint.py"],
     "assets": {
         "web.assets_frontend": [
             "/bloopark_realestatex_complaints/static/src/js/complaint_form_validate.js"
